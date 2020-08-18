@@ -1,0 +1,233 @@
+.about {
+    & .container {
+        padding: 70px 0;
+    }
+    & .row {
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-left: -15px;
+        position: relative;
+    }
+    & .about-content {
+        margin-top: 60px;
+        padding: 15px;
+        flex: 0 0 100%;
+        max-width: 100%;
+        
+
+        & .about-text {
+            flex: 0 0 100%;
+            max-width: 100%;
+            & span{
+                color: $redPink;
+            }
+
+            & h3 {
+                font-size: 24px;
+                margin-bottom: 15px;
+                font-weight: map-get($font-weights, bold);
+                color: #302e4d;
+            }
+
+            & p{
+                font-size: 1rem;
+                line-height: 25px;
+                font-weight: map-get($font-weights, 'regular');
+                color: #504e70;
+                margin: 0;
+            }
+        }
+
+        & .personal-info{
+            flex: 0 0 60%;
+            max-width: 60%;
+            margin-top: 40px;
+
+            & .info-item{
+                flex: 0 0 50%;
+                max-width: 50%;
+                
+                
+                & p{
+                    font-size: 1rem;
+                    font-weight: 600;
+                    padding: 10px 0;
+                    color: #302e4d;
+                    border-bottom: 1px solid #e8dfec;
+
+                    & span{
+                        font-weight: map-get($font-weights, 'regular');
+                        color: #504e70;
+                        margin-left: 4px;
+                        display: inline-block;
+                    }
+                }
+            }
+
+            & .buttons {
+                margin-top: 45px;
+
+                & .btn {
+                   font-size: 16px;
+                   font-family: 'Rubik',sans-serif;
+                   font-weight: map-get($font-weights,medium);
+                   margin: 15px;
+                   background-color: $redPink;
+                   color: #e8dfec;
+                   padding: 15px 35px;
+                   border-radius: 65px;
+                   transition: all 0.3s ease;
+                   display: inline-block;
+                   white-space: nowrap;
+                   text-align: center;
+                }
+                & .btn:hover {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    
+        & .skills{
+            flex: 0 0 40%;
+            max-width: 40%;
+            margin-top: 40px;
+
+            & .skill-item {
+                flex: 0 0 100%;
+                max-width: 100%;
+                margin-bottom: 30px;
+                
+                & .progress {
+                    background-color: #e3e3e3; 
+                    height: 8px;
+                    border-radius: 4px;
+                    width: 100%;
+                    position: relative;
+                    
+                    & .progress-in {
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        height: 100%;
+                        background-color: $redPink;
+                    }
+
+                    & .skill-percent {
+                        // display: none;
+                        line-height: 40px;
+                        position: absolute;
+                        right: 0;
+                        top: -40px;
+                        font-weight: map-get($font-weights, "regular");
+                        
+                    }
+                }
+
+                & h5{
+                    line-height: 40px;
+                    font-weight: map-get($font-weights, medium);
+                    font-size: 16px;
+                    color: #302e4d;
+                    text-transform: capitalize;
+                    margin: 0;
+                }
+            }
+        }
+
+        & .education{
+            flex: 0 0 50%;
+            max-width: 50%;
+            margin-top: 30px;
+            padding-left: 1px;
+        }
+
+        & .experience{
+            flex: 0 0 50%;
+            max-width: 50%;
+            margin-top: 30px;
+            padding-left: 20px;
+        }
+
+        & h3.title {
+            font-size: 24px;
+            margin-bottom: 50px;
+            font-weight: map-get($font-weights,bold);
+            color: #302e4d;
+        }
+
+        & .timeline-box {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+
+        & .timeline {
+            background-color: #fdf9ff;
+            padding: 30px 15px;
+            border: 1px solid #d4d4e3;
+            border-radius: 10px;
+            width: 100%;
+            position: relative;
+
+            & .circle-dot{
+                position: absolute;
+                background-color: $redPink;
+                left: 0;
+                top: 0;
+                height: 15px;
+                width: 15px;
+                border-radius: 50%;
+            }
+
+            & .timeline-date{
+                font-size: 14px;
+                font-weight: map-get($font-weights,'regular');
+                margin-bottom: 12px;
+                color: #504e70;
+
+                & .fa{
+                    margin-right: 5px;
+                }
+            }
+
+            & .timeline-title{
+                font-weight: map-get($font-weights, bold);
+                font-size: 18px;
+                margin-bottom: 15px;
+                text-transform: capitalize;
+                color: #302e4d;
+            }
+
+            & .timeline-text{
+                font-size: 16px;
+                line-height: 25px;
+                color: #504e70;
+                margin: 0;
+            }
+
+            & .timeline-item{
+                position: relative;
+                padding-left: 37px;
+                padding-bottom: 50px;
+
+                &:last-child{
+                    padding-bottom: 0px;
+                }
+
+                &:before{
+                    background-color: $redPink;
+                    content: '';
+                    width: 1px;
+                    position: absolute;
+                    height: 100%;
+                    left: 7px;
+                    top: 0;
+                }
+            }
+        }
+
+    }
+}
+
+
+

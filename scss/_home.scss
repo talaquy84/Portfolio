@@ -1,0 +1,59 @@
+.home{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    & .intro {
+        text-align: center;
+        
+        & img{
+            height: 220px;
+            width: 220px;
+            border: 8px solid #ffffff;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        & h1{
+            font-family: 'Rubik', sans-serif;
+            font-weight: map-get($font-weights, bold);
+            font-size: 2.1rem;
+            margin: 20px 0 5px;
+            line-height: 6rem;
+            color: #504e70;
+        }
+
+        & p{
+            font-size: 1.2rem;
+            font-weight: map-get($font-weights, medium);
+            line-height: 12px;
+            margin:0;
+            color: #504e70;
+        }
+        & .social-links{
+            margin-top: 25px;
+            
+            & a{
+                height: 35px;
+                width: 35px;
+                display: inline-block;
+                text-align: center;
+                line-height: 35px;
+                background-color: red;
+                color: #FFFfff;
+                margin: 0 4px;
+                border-radius: 50%;
+                text-decoration: none;
+                transition: all 0.3s ease;
+            }
+
+            & a:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+
+
+
+
