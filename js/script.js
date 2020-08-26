@@ -1,3 +1,11 @@
+window.addEventListener("load", function(){
+    document.querySelector(".preloader").classList.add("opacity-0");
+
+    setTimeout(function(){
+        document.querySelector(".preloader").style.display="none";
+    }, 1000)
+})
+
 //Aside Navigation Bar
 const nav = document.querySelector('.nav'),
     navList = nav.querySelectorAll("li"),
@@ -22,17 +30,32 @@ for(let i = 0; i<totalNavList; i++){
         }
 
         this.classList.add("active");
-        showSelection(this);
+        showSection(this);
     })
 }
 
-function showSelection(element){
-    for( let i = 0; i<allSection.length; i++){
+function showSection(element){
+    for( let i = 0; i<totalNavList.length; i++){
         allSection[i].classList.remove("active");
     }
     const target = element.getAttribute('href').split("#")[1];
     document.querySelector("#" + target).classList.add("active");
 }
+
+function updateNav(element){
+    for( let i = 0; i<totalNavList; i++){
+        navList[i].querySelector("a").classList.remove("active");
+        const target = element.getAttribute("href").split("#")[1];
+        if (target === navList[i].querySelector("a").getAttribute("href").split("#")[1]){
+            navList[i].querySelector("a").classList.add("active")
+        }
+    }
+}
+
+document.querySelector(".hire-me").addEventListener("click", function(){
+    showSection(this);
+    updateNav(this);
+})
 
 const navTogglerBtn = document.querySelector(".nav-toggler");
 const aside = document.querySelector(".aside");

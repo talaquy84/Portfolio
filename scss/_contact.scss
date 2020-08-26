@@ -4,6 +4,7 @@
 }
 
 .contact {
+    transition: all 1s ease;
     & .contact-info-item {
         flex: 0 0 33.33%;
         max-width: 33.33%;
