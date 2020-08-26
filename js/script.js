@@ -16,16 +16,13 @@ for(let i = 0; i<totalNavList; i++){
     const a = navList[i].querySelector("a");
     a.addEventListener("click", function(){
         // remove back section
-        for( let i = 0; i<allSection.length; i++){
-            allSection[i].classList.remove("back-section");
-        }
+        removeBackSectionClass();
 
         for(let j=0; j<totalNavList; j++){
             if(navList[j].querySelector("a").classList.contains("active")){
                 // Add back section 
-                allSection[j].classList.add("back-section");
+                addBackSectionClass(j)
             }
-
             navList[j].querySelector("a").classList.remove("active");
         }
 
@@ -34,8 +31,18 @@ for(let i = 0; i<totalNavList; i++){
     })
 }
 
+function removeBackSectionClass(){
+    for( let i = 0; i<allSection.length; i++){
+        allSection[i].classList.remove("back-section");
+    }
+}
+
+function addBackSectionClass(num){
+    allSection[num].classList.add("back-section");
+}
+
 function showSection(element){
-    for( let i = 0; i<totalNavList.length; i++){
+    for( let i = 0; i<allSection.length; i++){
         allSection[i].classList.remove("active");
     }
     const target = element.getAttribute('href').split("#")[1];
@@ -53,8 +60,11 @@ function updateNav(element){
 }
 
 document.querySelector(".hire-me").addEventListener("click", function(){
+    const sectionIndex = this.getAttribute("data-section-index");
     showSection(this);
     updateNav(this);
+    removeBackSectionClass();
+    addBackSectionClass(sectionIndex);
 })
 
 const navTogglerBtn = document.querySelector(".nav-toggler");
